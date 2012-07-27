@@ -15,15 +15,14 @@ jQuery.fn.equalHeights = function() {
 	});
 };
 
-function ddResizeClass(className) {
-	var selector = '.' + className;
+function ddResizeClass(selector) {
 	jQuery(selector).equalHeights();
 }
 
 function ddEqualizeHeights() {
 	if (ddClasses != 'undefined') {
-		ddClasses.each(function(className) {
-			ddResizeClass(className);
+		ddClasses.each(function(selector) {
+			ddResizeClass(selector);
 		});
 	}
 }
