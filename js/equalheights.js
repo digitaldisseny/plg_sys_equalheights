@@ -21,7 +21,7 @@ function ddResizeClass(selector) {
 
 function ddEqualizeHeights() {
 	if (ddClasses != 'undefined') {
-		ddClasses.each(function(selector) {
+		jQuery.each(ddClasses, function(index, selector) {
 			ddResizeClass(selector);
 		});
 	}
