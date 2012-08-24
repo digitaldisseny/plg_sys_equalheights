@@ -7,7 +7,7 @@
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>roberto@digitaldisseny.com</authorEmail>
 	<authorUrl>www.digitaldisseny.com</authorUrl>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<description>PLG_SYS_EQUALHEIGHTS_XML_DESC</description>
 	<files>
 		<folder>css</folder>
@@ -20,6 +20,9 @@
 		<!-- en-GB -->
 		<language tag="en-GB">language/en-GB/en-GB.plg_system_equalheights.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.plg_system_equalheights.sys.ini</language>
+		<!-- de-DE -->
+		<language tag="de-DE">language/de-DE/de-DE.plg_system_equalheights.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.plg_system_equalheights.sys.ini</language>
 	</languages>
 	<config>
 	<fields name="params">
