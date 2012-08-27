@@ -23,9 +23,6 @@
 		<!-- de-DE -->
 		<language tag="de-DE">language/de-DE/de-DE.plg_system_equalheights.ini</language>
 		<language tag="de-DE">language/de-DE/de-DE.plg_system_equalheights.sys.ini</language>
-		<!-- es-ES -->
-		<language tag="es-ES">language/es-ES/es-ES.plg_system_equalheights.ini</language>
-		<language tag="es-ES">language/es-ES/es-ES.plg_system_equalheights.sys.ini</language>
 	</languages>
 	<config>
 	<fields name="params">
