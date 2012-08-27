@@ -1,7 +1,10 @@
 .buildpath
 .settings/
 .project
-# nunca ignorar .gitignore ni index.html
+# never ignore .gitignore ni index.html
 !.gitignore
 !index.html
 !index.php
+# ignore tmp/backup files
+*~
+*.bak
