@@ -2,12 +2,12 @@
 <extension version="2.5" type="plugin" group="system" method="upgrade">
 	<name>PLG_SYS_EQUALHEIGHTS</name>
 	<author>Digital Disseny, S.L.</author>
-	<creationDate>August 2012</creationDate>
+	<creationDate>October 2012</creationDate>
 	<copyright>Copyright (C) 2012 Digital Disseny, S.L. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>roberto@digitaldisseny.com</authorEmail>
 	<authorUrl>www.digitaldisseny.com</authorUrl>
-	<version>1.0.3</version>
+	<version>1.0.5</version>
 	<description>PLG_SYS_EQUALHEIGHTS_XML_DESC</description>
 	<files>
 		<folder>css</folder>
@@ -30,12 +30,13 @@
 	<config>
 	<fields name="params">
 		<fieldset name="basic">
-			<field 
-				name="css_selectors" 
-				type="text" 
-				default="" 
-				size="40"
-				label="PLG_SYS_EQUALHEIGHTS_FIELD_CSS_SELECTORS_LABEL" 
+			<field
+				name="css_selectors"
+				type="textarea"
+				default=""
+				rows="5"
+				cols="30"
+				label="PLG_SYS_EQUALHEIGHTS_FIELD_CSS_SELECTORS_LABEL"
 				description="PLG_SYS_EQUALHEIGHTS_FIELD_CSS_SELECTORS_DESC" />
 			<field
 				name="on_resize"
@@ -64,8 +65,8 @@
 							PLG_SYS_EQUALHEIGHTS_FIELD_LOAD_JQUERY_GOOGLE
 						</option>
 				</field>
-				<field name="injectPosition" 
-					type="list" 
+				<field name="injectPosition"
+					type="list"
 		            label="PLG_SYS_EQUALHEIGHTS_FIELD_INJECT_POSITION_LABEL"
 		            description="PLG_SYS_EQUALHEIGHTS_FIELD_INJECT_POSITION_DESC"
 		            default="belowtitle">

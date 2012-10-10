@@ -5,7 +5,7 @@ jQuery.fn.equalHeights = function() {
 	this.each(function(){
 		var $this = jQuery(this);
 		$this.height('auto');
-		if ($this.outerHeight() > maxHeight) { maxHeight = $this.outerHeight(); }
+		if ($this.outerHeight(false) > maxHeight) { maxHeight = $this.outerHeight(false); }
 	});
 
 	// set the elements height
