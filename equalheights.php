@@ -3,8 +3,8 @@
  * @package     Joomla.Plugin
  * @subpackage  System.Equalheights
  *
- * @author      Roberto Segura <roberto@phproberto.com>
- * @copyright   (c) 2012 Roberto Segura. All Rights Reserved.
+ * @author      Roberto Segura <roberto@digitaldisseny.com>
+ * @copyright   (c) 2012 Digital Disseny, S.L. All Rights Reserved.
  * @license     GNU/GPL 2, http://www.gnu.org/licenses/gpl-2.0.htm
  */
 
@@ -15,6 +15,7 @@ JLoader::import('joomla.plugin.plugin');
 /**
  * Main plugin class
  *
+ * @version     04/09/2012
  * @package     Joomla.Plugin
  * @subpackage  System.Equalheights
  * @since       2.5
@@ -27,12 +28,13 @@ class PlgSystemEqualheights extends JPlugin
 
 	// Plugin info constants
 	const TYPE = 'system';
+
 	const NAME = 'equalheights';
 
 	// Handy objects
-	private $_app = null;
+	private $_app    = null;
 
-	private $_doc = null;
+	private $_doc    = null;
 
 	private $_jinput = null;
 
@@ -495,5 +497,4 @@ class PlgSystemEqualheights extends JPlugin
 		}
 		return false;
 	}
-
 }
