@@ -138,7 +138,7 @@ class PlgSystemEqualheights extends JPlugin
 		}
 
 		// Required objects
-		$app =& JFactory::getApplication();
+		$app = JFactory::getApplication();
 		$doc = JFactory::getDocument();
 
 		// Configuration Parameters
@@ -149,9 +149,11 @@ class PlgSystemEqualheights extends JPlugin
 
 		// Convert CSS selector string to array
 		$cssClasses = array();
+
 		if (!empty($selectorString) && $selectorString != '')
 		{
 			$classes = explode(',', $selectorString);
+
 			if (!empty($classes))
 			{
 				foreach ($classes as $class)
@@ -338,6 +340,7 @@ class PlgSystemEqualheights extends JPlugin
 		if (!empty($this->_cssCalls))
 		{
 			$body = JResponse::getBody();
+
 			foreach ($this->_cssCalls as $position => $cssCalls)
 			{
 				if (!empty($cssCalls))
@@ -356,6 +359,7 @@ class PlgSystemEqualheights extends JPlugin
 					else
 					{
 						$doc = JFactory::getDocument();
+
 						foreach ($cssCalls as $cssUrl)
 						{
 							$doc->addStyleSheet($cssUrl);
@@ -380,6 +384,7 @@ class PlgSystemEqualheights extends JPlugin
 		if (!empty($this->_jsCalls))
 		{
 			$body = JResponse::getBody();
+
 			foreach ($this->_jsCalls as $position => $jsCalls)
 			{
 				if (!empty($jsCalls))
@@ -398,6 +403,7 @@ class PlgSystemEqualheights extends JPlugin
 					else
 					{
 						$doc = JFactory::getDocument();
+
 						foreach ($jsCalls as $jsUrl)
 						{
 							$doc->addScript($jsUrl);
