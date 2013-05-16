@@ -1,5 +1,6 @@
 jQuery.fn.equalHeights = function() {
 	var maxHeight = 0;
+	var windowWidth = jQuery(window).width();
 
 	// get the maximum height
 	this.each(function(){
@@ -8,11 +9,15 @@ jQuery.fn.equalHeights = function() {
 		if ($this.outerHeight(false) > maxHeight) { maxHeight = $this.outerHeight(false); }
 	});
 
-	// set the elements height
-	this.each(function(){
-		var $this = jQuery(this);
-		$this.height(maxHeight);
-	});
+	// We dont want to add extra space in a mobile view (< 750px)
+	if (windowWidth > 750)
+	{
+		// Set the elements height
+		this.each(function(){
+			var $this = jQuery(this);
+			$this.height(maxHeight);
+		});
+	}
 };
 
 function ddResizeClass(selector) {
