@@ -23,7 +23,6 @@ JLoader::import('joomla.plugin.plugin');
  */
 class PlgSystemEqualheights extends JPlugin
 {
-
 	private $_params = null;
 
 	// Plugin info constants
@@ -88,13 +87,12 @@ class PlgSystemEqualheights extends JPlugin
 	private $_backendEnabled = true;
 
 	/**
-	* Constructor
-	*
-	* @param   mixed  &$subject  Subject
-	*/
+	 * Constructor
+	 *
+	 * @param   mixed  &$subject  Subject
+	 */
 	function __construct( &$subject )
 	{
-
 		parent::__construct($subject);
 
 		// Required objects
@@ -130,7 +128,6 @@ class PlgSystemEqualheights extends JPlugin
 	 */
 	function onAfterRender()
 	{
-
 		// Validate view
 		if (!$this->_validateUrl())
 		{
@@ -166,7 +163,6 @@ class PlgSystemEqualheights extends JPlugin
 		// Only enabled in site app
 		if (!empty($cssClasses) && $app->isSite())
 		{
-
 			// Load jQuery ? jQuery is added to header to avoid non-ready errors
 			if ($loadJquery)
 			{
@@ -189,7 +185,15 @@ class PlgSystemEqualheights extends JPlugin
 			}
 
 			// Add script to header
-			$equalJs = $this->_urlJs . '/equalheights.js';
+			if (defined('JDEBUG') && JDEBUG)
+			{
+				$equalJs = $this->_urlJs . '/equalheights.js';
+			}
+			else
+			{
+				$equalJs = $this->_urlJs . '/equalheights.min.js';
+			}
+
 			$this->_addJsCall($equalJs, 'bodybottom');
 
 			// Equalize CSS classes
@@ -208,8 +212,8 @@ class PlgSystemEqualheights extends JPlugin
 				$script .= "\n\tresizeTimer = setTimeout(ddEqualizeHeights, 50);";
 				$script .= "\n});";
 			}
-			$this->_addJsCall($script, 'bodybottom', 'script');
 
+			$this->_addJsCall($script, 'bodybottom', 'script');
 		}
 
 		// JS load
@@ -225,7 +229,6 @@ class PlgSystemEqualheights extends JPlugin
 		}
 
 		return true;
-
 	}
 
 	/**
@@ -241,7 +244,6 @@ class PlgSystemEqualheights extends JPlugin
 	 */
 	private function _addCssCall($cssUrl, $position = null)
 	{
-
 		// If position is not available we will try to load the url through $doc->addScript
 		if (is_null($position) || !in_array($position, $this->_htmlPositionsAvailable))
 		{
@@ -261,7 +263,6 @@ class PlgSystemEqualheights extends JPlugin
 
 		// Insert CSS call
 		$this->_cssCalls[$position][] = $cssCall;
-
 	}
 
 	/**
@@ -278,7 +279,6 @@ class PlgSystemEqualheights extends JPlugin
 	 */
 	private function _addJsCall($jsUrl, $position = null, $type = 'url')
 	{
-
 		// If position is not available we will try to load the url through $doc->addScript
 		if (is_null($position) || !in_array($position, $this->_htmlPositionsAvailable))
 		{
@@ -317,12 +317,11 @@ class PlgSystemEqualheights extends JPlugin
 	 */
 	private function _initFolders()
 	{
-
 		// Paths
-		$this->_pathPlugin = JPATH_PLUGINS . DIRECTORY_SEPARATOR . self::TYPE . DIRECTORY_SEPARATOR . self::NAME;
+		$this->_pathPlugin = JPATH_PLUGINS . '/' . self::TYPE . '/' . self::NAME;
 
 		// URLs
-		$this->_urlPlugin = JURI::root() . "plugins/" . self::TYPE . "/" . self::NAME;
+		$this->_urlPlugin = JURI::root(true) . "/plugins/" . self::TYPE . "/" . self::NAME;
 		$this->_urlJs = $this->_urlPlugin . "/js";
 		$this->_urlCss = $this->_urlPlugin . "/css";
 	}
@@ -367,6 +366,7 @@ class PlgSystemEqualheights extends JPlugin
 					}
 				}
 			}
+
 			JResponse::setBody($body);
 		}
 	}
@@ -411,6 +411,7 @@ class PlgSystemEqualheights extends JPlugin
 					}
 				}
 			}
+
 			JResponse::setBody($body);
 		}
 	}
@@ -430,6 +431,7 @@ class PlgSystemEqualheights extends JPlugin
 		{
 			return true;
 		}
+
 		return false;
 	}
 
@@ -447,6 +449,7 @@ class PlgSystemEqualheights extends JPlugin
 		{
 			return true;
 		}
+
 		return false;
 	}
 
@@ -484,6 +487,7 @@ class PlgSystemEqualheights extends JPlugin
 				return true;
 			}
 		}
+
 		return false;
 	}
 
@@ -501,6 +505,7 @@ class PlgSystemEqualheights extends JPlugin
 		{
 			return true;
 		}
+
 		return false;
 	}
 }
