@@ -16,7 +16,9 @@ Desktop.ini
 *~
 
 # Build
-build
+build/node_modules
+build/gulp-config.json
+build/releases
 
 # Never ignore
 !.gitignore
