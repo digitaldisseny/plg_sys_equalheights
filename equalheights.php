@@ -187,17 +187,18 @@ class PlgSystemEqualheights extends JPlugin
 			// Add script to header
 			if (defined('JDEBUG') && JDEBUG)
 			{
-				$equalJs = $this->_urlJs . '/equalheights.js';
+				$equalJs = JUri::root(true) . '/media/plg_system_equalheights/js/equalheights.js';
 			}
 			else
 			{
-				$equalJs = $this->_urlJs . '/equalheights.min.js';
+				$equalJs = JUri::root(true) . '/media/plg_system_equalheights/js/equalheights.min.js';
 			}
 
 			$this->_addJsCall($equalJs, 'bodybottom');
 
 			// Equalize CSS classes
 			$jsArrayContent = '"' . implode('","', $cssClasses) . '"';
+
 			$script = "\n\tvar ddClasses = new Array(" . $jsArrayContent . " );";
 			$script .= "\njQuery(window).load(function() {";
 			$script .= "\n\tddEqualizeHeights();";

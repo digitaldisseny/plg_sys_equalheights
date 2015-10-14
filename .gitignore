@@ -15,8 +15,8 @@ Desktop.ini
 *~.nib
 *~
 
-# Build config
-build.properties
+# Build
+build
 
 # Never ignore
 !.gitignore
